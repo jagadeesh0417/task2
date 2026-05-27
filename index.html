@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>API Dashboard</h1>
+    <p>Weather &middot; Crypto &middot; News</p>
+  </header>
+
+  <nav>
+    <button class="tab active" data-tab="weather">Weather</button>
+    <button class="tab" data-tab="crypto">Crypto</button>
+    <button class="tab" data-tab="news">News</button>
+  </nav>
+
+  <main>
+
+    <!-- WEATHER -->
+    <section id="weather" class="tab-content active">
+      <div class="card">
+        <h2>Weather</h2>
+        <div class="controls">
+          <input type="text" id="cityInput" placeholder="Enter city name..." value="London">
+          <button id="weatherBtn">Get Weather</button>
+          <button id="forecastBtn" class="secondary">3-Day Forecast</button>
+        </div>
+      </div>
+      <div id="weatherResult" class="card output"></div>
+    </section>
+
+    <!-- CRYPTO -->
+    <section id="crypto" class="tab-content">
+      <div class="card">
+        <h2>Cryptocurrency</h2>
+        <div class="controls">
+          <input type="text" id="cryptoSearch" placeholder="Search by name or symbol...">
+          <button id="cryptoBtn">Top 50</button>
+          <button id="cryptoSearchBtn" class="secondary">Search</button>
+        </div>
+      </div>
+      <div id="cryptoResult" class="card output"></div>
+    </section>
+
+    <!-- NEWS -->
+    <section id="news" class="tab-content">
+      <div class="card">
+        <h2>News</h2>
+        <div class="controls">
+          <select id="categorySelect">
+            <option value="general">General</option>
+            <option value="business">Business</option>
+            <option value="technology">Technology</option>
+            <option value="entertainment">Entertainment</option>
+            <option value="sports">Sports</option>
+          </select>
+          <input type="text" id="newsQuery" placeholder="Search news...">
+          <button id="newsBtn">Top Headlines</button>
+          <button id="newsSearchBtn" class="secondary">Search</button>
+        </div>
+      </div>
+      <div id="newsResult" class="card output"></div>
+    </section>
+
+  </main>
+
+  <div id="loader" class="loader hidden">Loading...</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
